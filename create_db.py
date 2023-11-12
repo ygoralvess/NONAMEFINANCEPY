@@ -1,6 +1,6 @@
-import sqLite3
+import sqlite3
 
-conn = sqLite3.connect("expenses.db")
+conn = sqlite3.connect("expenses.db")
 
 cur = conn.cursor()
 
@@ -8,7 +8,8 @@ cur.execute("""CREATE TABLE IF NOT EXISTS expences
 (id INTEGER PRIMARY KEY,
 Date DATE,
 description TEXT,
-categort TEXT,
+category TEXT,
 price REAL)""")
 
-conn.commit
+conn.commit()
+conn.close()
